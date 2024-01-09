@@ -1,4 +1,4 @@
-from langserve_launch_example import get_chain
+from learn_map import get_chain
 
 
 def test_my_chain() -> None:

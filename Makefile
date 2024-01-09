@@ -4,7 +4,7 @@
 all: help
 
 start:
-	poetry run uvicorn langserve_launch_example.server:app --reload
+	poetry run uvicorn learn_map.server:app --reload
 
 # Define a variable for the test file path.
 TEST_FILE ?= tests/
@@ -26,8 +26,8 @@ format format_diff:
 	poetry run black $(PYTHON_FILES)
 	poetry run ruff --select I --fix $(PYTHON_FILES)
 
-deploy_gcp:
-	gcloud run deploy langserve-launch-example --source . --port 8001 --env-vars-file .env.gcp.yaml --allow-unauthenticated --region us-central1 --min-instances 1
+# deploy_gcp:
+# 	gcloud run deploy langserve-launch-example --source . --port 8001 --env-vars-file .env.gcp.yaml --allow-unauthenticated --region us-central1 --min-instances 1
 
 ######################
 # HELP
