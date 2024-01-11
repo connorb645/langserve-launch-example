@@ -2,8 +2,7 @@
 name = "learn_map"
 version = "0.0.1"
 description = ""
-authors = ["Nuno Campos <nuno@langchain.dev>"]
-license = "MIT"
+authors = ["Connor Black <connor.b645@gmail.com>"]
 readme = "README.md"
 packages = [{include = "learn_map"}]
 
@@ -14,7 +13,7 @@ langserve = { version = ">=0.0.6", extras = ["server"] }
 tiktoken = "^0.4.0"
 openai = "^0.27.8"
 fastapi = "^0.96.0"
-uvicorn = {extras = ["standard"], version = "^0.22.0"}
+uvicorn = "^0.25.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.4.0"

@@ -11,16 +11,12 @@ from langchain.prompts.chat import (
 )
 from langchain.prompts import FewShotChatMessagePromptTemplate
 from langchain.schema.runnable import Runnable
-import asyncio
-
-async def run_chat_model(chat_model, chat_prompt):
-    async for msg in chat_model.astream(chat_prompt):
-        print(msg, end="", flush=True)
 
 def get_chain() -> Runnable:
     """
     Constructs and returns a chat chain that is ready to run.
     """
+
     chat_model = ChatOpenAI()
 
     system_message_prompt = SystemMessagePromptTemplate.from_template(template)
@@ -48,8 +44,6 @@ def get_chain() -> Runnable:
             system_message_prompt,
             human_message_prompt
         ])
-
-    asyncio.run(run_chat_model(chat_model, chat_prompt))
 
     return chat_prompt | chat_model
 
